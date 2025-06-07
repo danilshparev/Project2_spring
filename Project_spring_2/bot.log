@@ -1,0 +1,803 @@
+2025-06-05 17:25:44,166 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 17:25:44,321 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:27:09,784 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 17:27:10,038 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:27:13,801 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 17:27:13,993 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:27:38,518 - aiogram.event - INFO - Update id=192667320 is not handled. Duration 77 ms by bot id=8181805950
+2025-06-05 17:27:38,530 - aiogram.event - ERROR - Cause exception while process update id=192667320 by bot id=8181805950
+ClientConnectorError: Cannot connect to host api.coindesk.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1203, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 880, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 917, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 868, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\middlewares\throttling.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\routers\handlers\news_handler.py", line 10, in send_news
+    news = await fetch_latest_news()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\services\api_client.py", line 10, in fetch_latest_news
+    async with session.get("https://api.coindesk.com/v1/news") as resp:
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 581, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 944, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.coindesk.com:443 ssl:default [getaddrinfo failed]
+2025-06-05 17:27:43,000 - aiogram.event - INFO - Update id=192667318 is handled. Duration 15217 ms by bot id=8181805950
+2025-06-05 17:27:51,757 - aiogram.event - INFO - Update id=192667319 is handled. Duration 15625 ms by bot id=8181805950
+2025-06-05 17:28:02,702 - aiogram.event - INFO - Update id=192667321 is not handled. Duration 15 ms by bot id=8181805950
+2025-06-05 17:28:02,702 - aiogram.event - ERROR - Cause exception while process update id=192667321 by bot id=8181805950
+ClientConnectorError: Cannot connect to host api.coindesk.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1203, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 880, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 917, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 868, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\middlewares\throttling.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\routers\handlers\news_handler.py", line 10, in send_news
+    news = await fetch_latest_news()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\services\api_client.py", line 10, in fetch_latest_news
+    async with session.get("https://api.coindesk.com/v1/news") as resp:
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 581, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 944, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.coindesk.com:443 ssl:default [getaddrinfo failed]
+2025-06-05 17:28:28,238 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 17:28:28,499 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:42:56,326 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 17:42:56,488 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:43:00,731 - aiogram.event - INFO - Update id=192667322 is handled. Duration 250 ms by bot id=8181805950
+2025-06-05 17:43:02,551 - aiogram.event - INFO - Update id=192667323 is handled. Duration 77 ms by bot id=8181805950
+2025-06-05 17:43:39,799 - aiogram.event - INFO - Update id=192667324 is handled. Duration 390 ms by bot id=8181805950
+2025-06-05 17:44:44,380 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 17:44:44,643 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:48:57,554 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 17:48:57,921 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:48:59,557 - aiogram.event - INFO - Update id=192667325 is handled. Duration 327 ms by bot id=8181805950
+2025-06-05 17:49:03,969 - aiogram.event - INFO - Update id=192667326 is handled. Duration 640 ms by bot id=8181805950
+2025-06-05 17:49:16,872 - aiogram.event - INFO - Update id=192667327 is handled. Duration 343 ms by bot id=8181805950
+2025-06-05 17:49:22,940 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 17:49:23,199 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:56:58,638 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 17:56:59,006 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 17:57:02,710 - aiogram.event - INFO - Update id=192667328 is handled. Duration 640 ms by bot id=8181805950
+2025-06-05 17:57:06,004 - aiogram.event - INFO - Update id=192667329 is handled. Duration 358 ms by bot id=8181805950
+2025-06-05 17:57:08,173 - aiogram.event - INFO - Update id=192667330 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 17:57:17,604 - aiogram.event - INFO - Update id=192667331 is handled. Duration 155 ms by bot id=8181805950
+2025-06-05 17:57:22,815 - aiogram.event - INFO - Update id=192667332 is handled. Duration 94 ms by bot id=8181805950
+2025-06-05 17:57:29,425 - aiogram.event - INFO - Update id=192667333 is not handled. Duration 0 ms by bot id=8181805950
+2025-06-05 17:57:47,549 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 17:57:47,803 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:02:39,416 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:02:54,631 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:02:54,916 - aiogram.event - INFO - Update id=192667334 is handled. Duration 218 ms by bot id=8181805950
+2025-06-05 21:02:54,917 - aiogram.event - INFO - Update id=192667335 is handled. Duration 218 ms by bot id=8181805950
+2025-06-05 21:03:02,526 - aiogram.event - INFO - Update id=192667336 is not handled. Duration 1922 ms by bot id=8181805950
+2025-06-05 21:03:02,528 - aiogram.event - ERROR - Cause exception while process update id=192667336 by bot id=8181805950
+ContentTypeError: 0, message='Attempt to decode JSON with unexpected mimetype: text/html', url=URL('https://openapi.coinstats.app/news/latest?limit=5')
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\middlewares\throttling.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\routers\handlers\news_handler.py", line 10, in send_news
+    news = await fetch_latest_news()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\services\api_client.py", line 19, in fetch_latest_news
+    data = await resp.json()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client_reqrep.py", line 1176, in json
+    raise ContentTypeError(
+aiohttp.client_exceptions.ContentTypeError: 0, message='Attempt to decode JSON with unexpected mimetype: text/html', url=URL('https://openapi.coinstats.app/news/latest?limit=5')
+2025-06-05 21:03:11,561 - aiogram.event - INFO - Update id=192667337 is handled. Duration 234 ms by bot id=8181805950
+2025-06-05 21:03:15,702 - aiogram.event - INFO - Update id=192667338 is handled. Duration 79 ms by bot id=8181805950
+2025-06-05 21:09:29,374 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:09:29,639 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:12:56,292 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:12:56,457 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:13:07,762 - aiogram.event - INFO - Update id=192667339 is handled. Duration 233 ms by bot id=8181805950
+2025-06-05 21:13:10,700 - aiogram.event - INFO - Update id=192667340 is handled. Duration 1016 ms by bot id=8181805950
+2025-06-05 21:17:29,205 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:17:29,466 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:31:10,645 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:31:11,124 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:31:17,495 - aiogram.event - INFO - Update id=192667341 is handled. Duration 359 ms by bot id=8181805950
+2025-06-05 21:31:19,968 - aiogram.event - INFO - Update id=192667342 is handled. Duration 719 ms by bot id=8181805950
+2025-06-05 21:31:25,221 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:31:25,481 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:33:31,329 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:33:31,812 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:33:32,362 - aiogram.event - INFO - Update id=192667343 is handled. Duration 421 ms by bot id=8181805950
+2025-06-05 21:33:36,204 - aiogram.event - INFO - Update id=192667344 is handled. Duration 640 ms by bot id=8181805950
+2025-06-05 21:34:04,942 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:34:05,206 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:38:42,746 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:38:43,214 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:38:45,164 - aiogram.event - INFO - Update id=192667345 is handled. Duration 437 ms by bot id=8181805950
+2025-06-05 21:38:47,987 - aiogram.event - INFO - Update id=192667346 is handled. Duration 625 ms by bot id=8181805950
+2025-06-05 21:38:56,529 - aiogram.event - INFO - Update id=192667347 is handled. Duration 1141 ms by bot id=8181805950
+2025-06-05 21:39:05,870 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:39:06,122 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:55:46,662 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:55:47,170 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:55:49,598 - aiogram.event - INFO - Update id=192667348 is handled. Duration 422 ms by bot id=8181805950
+2025-06-05 21:55:51,547 - aiogram.event - INFO - Update id=192667349 is handled. Duration 765 ms by bot id=8181805950
+2025-06-05 21:55:55,297 - aiogram.event - INFO - Update id=192667350 is handled. Duration 1217 ms by bot id=8181805950
+2025-06-05 21:56:01,038 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:56:01,302 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:58:22,581 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 21:58:23,037 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 21:58:26,413 - aiogram.event - INFO - Update id=192667351 is handled. Duration 484 ms by bot id=8181805950
+2025-06-05 21:58:28,602 - aiogram.event - INFO - Update id=192667352 is handled. Duration 719 ms by bot id=8181805950
+2025-06-05 21:58:33,638 - aiogram.event - INFO - Update id=192667353 is handled. Duration 1250 ms by bot id=8181805950
+2025-06-05 21:58:44,190 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 21:58:44,455 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:15:01,043 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:15:06,954 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:16:33,162 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:16:33,341 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:16:33,697 - aiogram.event - INFO - Update id=192667355 is handled. Duration 203 ms by bot id=8181805950
+2025-06-05 22:16:33,700 - aiogram.event - INFO - Update id=192667354 is handled. Duration 203 ms by bot id=8181805950
+2025-06-05 22:16:37,230 - aiogram.event - INFO - Update id=192667356 is handled. Duration 500 ms by bot id=8181805950
+2025-06-05 22:16:44,923 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-05 22:16:44,998 - aiogram.event - INFO - Update id=192667357 is handled. Duration 5077 ms by bot id=8181805950
+2025-06-05 22:17:11,895 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:17:12,155 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:24:35,218 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:24:35,380 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:24:43,558 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:24:43,823 - aiogram.event - INFO - Update id=192667359 is not handled. Duration 4047 ms by bot id=8181805950
+2025-06-05 22:24:43,823 - aiogram.event - INFO - Update id=192667358 is not handled. Duration 8297 ms by bot id=8181805950
+2025-06-05 22:24:43,823 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:24:50,952 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:24:51,106 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:24:51,658 - aiogram.event - INFO - Update id=192667360 is handled. Duration 202 ms by bot id=8181805950
+2025-06-05 22:24:53,796 - aiogram.event - INFO - Update id=192667361 is handled. Duration 483 ms by bot id=8181805950
+2025-06-05 22:24:57,586 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-05 22:25:02,331 - aiogram.event - INFO - Update id=192667362 is handled. Duration 7000 ms by bot id=8181805950
+2025-06-05 22:25:08,425 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:25:08,682 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:36:16,353 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:36:16,516 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:36:16,856 - aiogram.event - INFO - Update id=192667363 is handled. Duration 187 ms by bot id=8181805950
+2025-06-05 22:36:27,156 - aiogram.event - INFO - Update id=192667365 is handled. Duration 625 ms by bot id=8181805950
+2025-06-05 22:36:34,558 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-05 22:36:40,912 - aiogram.event - INFO - Update id=192667366 is handled. Duration 10109 ms by bot id=8181805950
+2025-06-05 22:36:40,944 - aiogram.event - INFO - Update id=192667364 is handled. Duration 24281 ms by bot id=8181805950
+2025-06-05 22:37:37,556 - aiogram.event - INFO - Update id=192667367 is handled. Duration 265 ms by bot id=8181805950
+2025-06-05 22:37:39,149 - aiogram.event - INFO - Update id=192667368 is handled. Duration 172 ms by bot id=8181805950
+2025-06-05 22:37:45,363 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-05 22:37:53,512 - aiogram.event - INFO - Update id=192667369 is handled. Duration 12186 ms by bot id=8181805950
+2025-06-05 22:38:32,826 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:38:33,091 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:43:25,029 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:43:35,368 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:43:42,325 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:43:42,486 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:43:42,887 - aiogram.event - INFO - Update id=192667370 is handled. Duration 233 ms by bot id=8181805950
+2025-06-05 22:43:42,889 - aiogram.event - INFO - Update id=192667372 is handled. Duration 250 ms by bot id=8181805950
+2025-06-05 22:43:48,206 - aiogram.event - INFO - Update id=192667373 is handled. Duration 407 ms by bot id=8181805950
+2025-06-05 22:43:53,156 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-05 22:44:01,525 - aiogram.event - INFO - Update id=192667374 is handled. Duration 10687 ms by bot id=8181805950
+2025-06-05 22:44:03,677 - aiogram.event - INFO - Update id=192667371 is not handled. Duration 21030 ms by bot id=8181805950
+2025-06-05 22:44:03,678 - aiogram.event - ERROR - Cause exception while process update id=192667371 by bot id=8181805950
+TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1025, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1086, in create_connection
+    raise exceptions[0]
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1070, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 974, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 854, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 641, in finish_connect
+    ov.getresult()
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\aiohttp.py", line 170, in make_request
+    async with session.post(
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 581, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 944, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1257, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1226, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\connector.py", line 1033, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\middlewares\throttling.py", line 15, in __call__
+    await event.answer("Подождите пару секунд и отправьте запрос еще раз")
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-06-05 22:44:11,825 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:44:12,072 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:45:13,395 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:45:13,571 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:45:13,903 - aiogram.event - INFO - Update id=192667375 is handled. Duration 187 ms by bot id=8181805950
+2025-06-05 22:45:15,961 - aiogram.event - INFO - Update id=192667376 is handled. Duration 390 ms by bot id=8181805950
+2025-06-05 22:45:21,965 - aiogram.event - INFO - Update id=192667377 is handled. Duration 140 ms by bot id=8181805950
+2025-06-05 22:45:31,674 - aiogram.event - INFO - Update id=192667378 is not handled. Duration 30 ms by bot id=8181805950
+2025-06-05 22:45:31,674 - aiogram.event - ERROR - Cause exception while process update id=192667378 by bot id=8181805950
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xcf in position 5831: invalid continuation byte
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\middlewares\throttling.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\git_projects\Project_spring_2\routers\handlers\admin_handler.py", line 10, in cmd_stats
+    lines = f.readlines()
+            ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xcf in position 5831: invalid continuation byte
+2025-06-05 22:45:50,341 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:45:50,596 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'crypto-news-insight-bot'
+2025-06-05 22:53:29,759 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:53:29,932 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 22:53:33,969 - aiogram.event - INFO - Update id=192667379 is handled. Duration 202 ms by bot id=8181805950
+2025-06-05 22:53:40,926 - aiogram.event - INFO - Update id=192667380 is handled. Duration 92 ms by bot id=8181805950
+2025-06-05 22:55:33,656 - aiogram.event - INFO - Update id=192667381 is handled. Duration 282 ms by bot id=8181805950
+2025-06-05 22:56:32,127 - aiogram.event - INFO - Update id=192667382 is handled. Duration 155 ms by bot id=8181805950
+2025-06-05 22:56:35,036 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:56:35,309 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 22:56:53,861 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 22:56:54,031 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 22:56:54,457 - aiogram.event - INFO - Update id=192667384 is handled. Duration 265 ms by bot id=8181805950
+2025-06-05 22:56:54,458 - aiogram.event - INFO - Update id=192667383 is handled. Duration 265 ms by bot id=8181805950
+2025-06-05 22:57:04,001 - aiogram.event - INFO - Update id=192667385 is handled. Duration 217 ms by bot id=8181805950
+2025-06-05 22:57:16,354 - aiogram.event - INFO - Update id=192667386 is handled. Duration 62 ms by bot id=8181805950
+2025-06-05 22:57:21,819 - aiogram.event - INFO - Update id=192667387 is not handled. Duration 0 ms by bot id=8181805950
+2025-06-05 22:57:28,138 - aiogram.event - INFO - Update id=192667388 is handled. Duration 61 ms by bot id=8181805950
+2025-06-05 22:57:33,903 - aiogram.event - INFO - Update id=192667389 is not handled. Duration 0 ms by bot id=8181805950
+2025-06-05 22:57:42,667 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 22:57:42,912 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:05:28,933 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:05:29,101 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:05:34,668 - aiogram.event - INFO - Update id=192667390 is handled. Duration 172 ms by bot id=8181805950
+2025-06-05 23:05:39,084 - aiogram.event - INFO - Update id=192667391 is handled. Duration 94 ms by bot id=8181805950
+2025-06-05 23:05:43,537 - aiogram.event - INFO - Update id=192667392 is handled. Duration 140 ms by bot id=8181805950
+2025-06-05 23:05:54,349 - aiogram.event - INFO - Update id=192667393 is handled. Duration 312 ms by bot id=8181805950
+2025-06-05 23:06:07,517 - aiogram.event - INFO - Update id=192667394 is handled. Duration 62 ms by bot id=8181805950
+2025-06-05 23:06:18,169 - aiogram.event - INFO - Update id=192667395 is handled. Duration 62 ms by bot id=8181805950
+2025-06-05 23:06:23,621 - aiogram.event - INFO - Update id=192667396 is handled. Duration 77 ms by bot id=8181805950
+2025-06-05 23:10:46,921 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:10:47,180 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:14:48,996 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:15:04,207 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:15:04,358 - aiogram.event - INFO - Update id=192667397 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:15:04,574 - aiogram.event - INFO - Update id=192667400 is handled. Duration 203 ms by bot id=8181805950
+2025-06-05 23:15:04,580 - aiogram.event - INFO - Update id=192667399 is handled. Duration 219 ms by bot id=8181805950
+2025-06-05 23:15:10,503 - aiogram.event - INFO - Update id=192667401 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:15:15,501 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:15:15,767 - aiogram.event - INFO - Update id=192667398 is not handled. Duration 11406 ms by bot id=8181805950
+2025-06-05 23:15:15,768 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:16:07,888 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:16:08,052 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:16:08,201 - aiogram.event - INFO - Update id=192667402 is handled. Duration 15 ms by bot id=8181805950
+2025-06-05 23:16:18,089 - aiogram.event - INFO - Update id=192667403 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:16:24,029 - aiogram.event - INFO - Update id=192667404 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:16:27,983 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:16:28,243 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:19:17,674 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:19:17,845 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:19:37,774 - aiogram.event - INFO - Update id=192667405 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:19:43,962 - aiogram.event - INFO - Update id=192667406 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:19:53,101 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:19:53,360 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:20:01,615 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:20:01,764 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:20:01,927 - aiogram.event - INFO - Update id=192667407 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:20:07,678 - aiogram.event - INFO - Update id=192667408 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:20:10,032 - aiogram.event - INFO - Update id=192667409 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:20:10,648 - aiogram.event - INFO - Update id=192667410 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:20:11,671 - aiogram.event - INFO - Update id=192667411 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:20:14,017 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:20:14,273 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:20:53,600 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:20:53,770 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:20:54,118 - aiogram.event - INFO - Update id=192667412 is handled. Duration 187 ms by bot id=8181805950
+2025-06-05 23:20:59,312 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:20:59,582 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:23:54,562 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:24:09,747 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:24:10,076 - aiogram.event - INFO - Update id=192667414 is handled. Duration 172 ms by bot id=8181805950
+2025-06-05 23:24:14,465 - aiogram.event - INFO - Update id=192667415 is handled. Duration 94 ms by bot id=8181805950
+2025-06-05 23:24:20,873 - aiogram.event - INFO - Update id=192667416 is handled. Duration 109 ms by bot id=8181805950
+2025-06-05 23:24:25,509 - aiogram.event - INFO - Update id=192667413 is handled. Duration 15608 ms by bot id=8181805950
+2025-06-05 23:24:35,422 - aiogram.event - INFO - Update id=192667417 is handled. Duration 172 ms by bot id=8181805950
+2025-06-05 23:24:46,179 - aiogram.event - INFO - Update id=192667418 is handled. Duration 62 ms by bot id=8181805950
+2025-06-05 23:24:50,484 - aiogram.event - INFO - Update id=192667419 is handled. Duration 234 ms by bot id=8181805950
+2025-06-05 23:25:22,914 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:25:23,180 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:28:30,597 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:28:45,938 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:28:46,193 - aiogram.event - INFO - Update id=192667420 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:28:46,377 - aiogram.event - INFO - Update id=192667421 is handled. Duration 186 ms by bot id=8181805950
+2025-06-05 23:28:49,321 - aiogram.event - INFO - Update id=192667422 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:28:54,719 - aiogram.event - INFO - Update id=192667423 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:29:04,169 - aiogram.event - INFO - Update id=192667424 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:29:06,730 - aiogram.event - INFO - Update id=192667425 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:29:07,753 - aiogram.event - INFO - Update id=192667426 is handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:29:11,728 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:29:11,971 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:33:48,015 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:33:48,183 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:33:54,969 - aiogram.event - INFO - Update id=192667427 is handled. Duration 187 ms by bot id=8181805950
+2025-06-05 23:34:01,339 - aiogram.event - INFO - Update id=192667428 is handled. Duration 94 ms by bot id=8181805950
+2025-06-05 23:34:06,916 - aiogram.event - INFO - Update id=192667429 is handled. Duration 140 ms by bot id=8181805950
+2025-06-05 23:34:13,842 - aiogram.event - INFO - Update id=192667430 is handled. Duration 219 ms by bot id=8181805950
+2025-06-05 23:34:30,560 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:34:30,828 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:42:51,806 - aiogram.dispatcher - INFO - Start polling
+2025-06-05 23:42:52,049 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-05 23:43:16,545 - aiogram.event - INFO - Update id=192667431 is handled. Duration 172 ms by bot id=8181805950
+2025-06-05 23:43:22,392 - aiogram.event - INFO - Update id=192667432 is handled. Duration 391 ms by bot id=8181805950
+2025-06-05 23:43:27,431 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-05 23:43:35,311 - aiogram.event - INFO - Update id=192667433 is handled. Duration 10250 ms by bot id=8181805950
+2025-06-05 23:43:49,039 - aiogram.event - INFO - Update id=192667434 is not handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:44:01,635 - aiogram.event - INFO - Update id=192667435 is not handled. Duration 0 ms by bot id=8181805950
+2025-06-05 23:45:36,326 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-05 23:45:36,585 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:36:30,445 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 13:36:45,690 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:36:46,077 - aiogram.event - INFO - Update id=192667436 is handled. Duration 202 ms by bot id=8181805950
+2025-06-07 13:37:00,356 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 13:37:00,621 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:49:47,909 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 13:50:03,134 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 13:50:03,563 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<Dispatcher._polling() done, defined at C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py:324> exception=TelegramNetworkError('HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2706)')>
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\asyncio\sslproto.py", line 648, in _do_shutdown
+    self._sslobj.unwrap()
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\ssl.py", line 983, in unwrap
+    return self._sslobj.shutdown()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ssl.SSLError: [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2706)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\aiohttp.py", line 170, in make_request
+    async with session.post(
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1197, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 608, in _request
+    await resp.start(conn)
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client_reqrep.py", line 976, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\streams.py", line 640, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2706)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 340, in _polling
+    user: User = await bot.me()
+                 ^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\bot.py", line 364, in me
+    self._me = await self.get_me()
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\bot.py", line 1823, in get_me
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\danil\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2706)
+2025-06-07 13:50:11,422 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 13:50:11,588 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:50:11,939 - aiogram.event - INFO - Update id=192667438 is handled. Duration 204 ms by bot id=8181805950
+2025-06-07 13:50:11,942 - aiogram.event - INFO - Update id=192667437 is handled. Duration 204 ms by bot id=8181805950
+2025-06-07 13:50:27,447 - aiogram.event - INFO - Update id=192667439 is handled. Duration 1407 ms by bot id=8181805950
+2025-06-07 13:50:32,994 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 13:50:44,156 - aiogram.event - INFO - Update id=192667440 is handled. Duration 14750 ms by bot id=8181805950
+2025-06-07 13:51:05,295 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 13:51:05,550 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:54:03,588 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 13:54:10,303 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 13:54:16,810 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 13:54:16,976 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 13:54:17,305 - aiogram.event - INFO - Update id=192667442 is handled. Duration 172 ms by bot id=8181805950
+2025-06-07 13:54:17,308 - aiogram.event - INFO - Update id=192667441 is handled. Duration 187 ms by bot id=8181805950
+2025-06-07 13:54:21,465 - aiogram.event - INFO - Update id=192667443 is handled. Duration 375 ms by bot id=8181805950
+2025-06-07 13:54:25,728 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 13:54:38,456 - aiogram.event - INFO - Update id=192667444 is handled. Duration 14750 ms by bot id=8181805950
+2025-06-07 13:55:15,395 - aiogram.event - INFO - Update id=192667445 is handled. Duration 15250 ms by bot id=8181805950
+2025-06-07 13:55:24,719 - aiogram.event - INFO - Update id=192667446 is handled. Duration 15234 ms by bot id=8181805950
+2025-06-07 13:55:29,074 - aiogram.event - INFO - Update id=192667447 is handled. Duration 250 ms by bot id=8181805950
+2025-06-07 13:55:37,563 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 13:55:37,818 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 14:25:32,852 - aiogram.dispatcher - INFO - Start polling
+2025-06-07 14:25:33,031 - aiogram.dispatcher - INFO - Run polling for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
+2025-06-07 14:25:36,183 - aiogram.event - INFO - Update id=192667448 is handled. Duration 234 ms by bot id=8181805950
+2025-06-07 14:25:38,595 - aiogram.event - INFO - Update id=192667449 is handled. Duration 77 ms by bot id=8181805950
+2025-06-07 14:25:44,305 - aiogram.event - INFO - Update id=192667450 is handled. Duration 156 ms by bot id=8181805950
+2025-06-07 14:25:46,348 - aiogram.event - INFO - Update id=192667451 is handled. Duration 155 ms by bot id=8181805950
+2025-06-07 14:25:50,789 - aiogram.dispatcher - INFO - Polling stopped
+2025-06-07 14:25:51,036 - aiogram.dispatcher - INFO - Polling stopped for bot @crypto_news_insight_bot id=8181805950 - 'CryptoNews Insight Bot'
